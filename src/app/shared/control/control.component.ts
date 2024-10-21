@@ -48,6 +48,8 @@ export class ControlComponent implements AfterContentInit {
     afterNextRender(() => {
       console.log("After next render")
     });
+
+    console.log(this.el);
   }
 
   onClick() {
