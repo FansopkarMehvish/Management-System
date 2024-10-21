@@ -17,6 +17,7 @@ private form = viewChild.required<ElementRef<HTMLFormElement>>('form');
  onSubmit(title: string, ticketText: string){
   console.log(title);
   console.log(ticketText);
-  this.form.nativeElement.reset();
+  // this.form?.nativeElement.reset();
+  this.form()?.nativeElement.reset();
  }
 }
