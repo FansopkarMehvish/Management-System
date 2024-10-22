@@ -13,16 +13,20 @@ import { FormsModule } from '@angular/forms';
 export class NewTicketComponent implements AfterViewInit, OnInit {
 @ViewChild('form') private form ?: ElementRef<HTMLFormElement>; 
 // private form = viewChild.required<ElementRef<HTMLFormElement>>('form');
-
 // @Output() add = new EventEmitter<{title: string, text: string}>();
+
+enteredTitle = '';
+enteredText = '';
 add = output<{title: string; text: string}>();
 
- onSubmit(title: string, ticketText: string){
+ onSubmit(){
   this.add.emit({
-    title: title,
-    text: ticketText
+    title: this.enteredTitle,
+    text: this.enteredText
   })
-  this.form?.nativeElement.reset();
+  this.enteredTitle = '';
+  this.enteredText = '';
+  // this.form?.nativeElement.reset();
   // this.form()?.nativeElement.reset();
  }
 
